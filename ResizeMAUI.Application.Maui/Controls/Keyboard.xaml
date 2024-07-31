@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ResizeMAUI.Application.Maui.Controls;assembly=ResizeMAUI.Application.Maui"
+             xmlns:models="clr-namespace:ResizeMAUI.Models;assembly=ResizeMAUI.Models"
+             xmlns:viewModels="clr-namespace:ResizeMAUI.ViewModels;assembly=ResizeMAUI.ViewModels"             
+             x:Class="ResizeMAUI.Application.Maui.Controls.Keyboard"
+             x:DataType="viewModels:MainViewModel"
+             x:Name="Control">
+
+    <HorizontalStackLayout Spacing="{Binding PageLayout.OuterSpacing}" HorizontalOptions="Center">
+        <VerticalStackLayout Spacing="{Binding PageLayout.InnerSpacing}">
+            <HorizontalStackLayout Spacing="{Binding PageLayout.InnerSpacing}" HorizontalOptions="Center">
+                <controls:Button Text="q" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="w" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="e" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="r" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="t" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="y" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="u" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="i" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="o" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="p" PageLayout="{Binding PageLayout}"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="{Binding PageLayout.InnerSpacing}" HorizontalOptions="Center">
+                <controls:Button Text="a" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="s" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="d" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="f" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="g" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="h" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="j" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="k" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="l" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="'" PageLayout="{Binding PageLayout}"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout Spacing="{Binding PageLayout.InnerSpacing}" HorizontalOptions="Center">
+                <controls:Button Text="z" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="x" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="c" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="v" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="b" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="n" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="m" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="," PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="." PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="?" PageLayout="{Binding PageLayout}"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="{Binding PageLayout.InnerSpacing}" HorizontalOptions="Center">
+                <controls:Button Text="caps lock" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="yes" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="space" WidthRequest="{Binding PageLayout.SpaceButtonWidth}" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="no" PageLayout="{Binding PageLayout}"/>
+                <controls:Button Text="backspace" PageLayout="{Binding PageLayout}"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+    </HorizontalStackLayout>
+
+</ContentView>

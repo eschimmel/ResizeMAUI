@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:ResizeMAUI.Application.Maui.Controls"
+             xmlns:viewModels="clr-namespace:ResizeMAUI.ViewModels;assembly=ResizeMAUI.ViewModels"
+             x:Class="ResizeMAUI.Application.Maui.Pages.MainPage"
+             x:DataType="viewModels:MainViewModel">
+
+    <Grid Padding="{Binding PageLayout.PagePadding, Converter={x:StaticResource StringToThickness}}" RowSpacing="{Binding PageLayout.InnerSpacing}" ColumnSpacing="{Binding PageLayout.OuterSpacing}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="{Binding PageLayout.RightColumnWidth}"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="{Binding PageLayout.RowHeight}"/>
+            <RowDefinition Height="{Binding PageLayout.ButtonHeight}"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <VerticalStackLayout Grid.Row="0" Grid.Column="0">
+            <Entry VerticalOptions="Start" HorizontalOptions="Fill" MinimumHeightRequest="{Binding PageLayout.TextDisplayEntryHeight}" FontSize="{Binding PageLayout.TextDisplayFontSize}" />
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="0" Grid.Column="1">
+            <controls:Button Text="Show All" PageLayout="{Binding PageLayout}"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+            <controls:Button Text="Clear" PageLayout="{Binding PageLayout}"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="2" Grid.Column="0">
+            <controls:Keyboard x:Name="Keyboard"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="2" Grid.Column="1" Spacing="{Binding PageLayout.InnerSpacing}">
+            <controls:Button Text="Letters" PageLayout="{Binding PageLayout}"/>
+            <controls:Button Text="Numbers" PageLayout="{Binding PageLayout}"/>
+            <controls:Button Text="Words" PageLayout="{Binding PageLayout}"/>
+            <controls:Button Text="Settings" PageLayout="{Binding PageLayout}"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>
