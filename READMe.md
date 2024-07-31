@@ -5,13 +5,13 @@ This solution shows how precise sizing of UI elements can be done without having
 I have included the most important part of the source code that I used for my mobile application Smart Letter Baord, which can be found on
 https://smartletterboard.com
 
-# Problem
+## Problem
 For Smart Letter Board it was very important that the keys on the screen were as big as possible on both phone and tablet. 
 I also wanted to give the user the possibility to select from different page layouts to make it even fit better; one with the number on top, one with a numeric pad on the right, and one without numbers.
 On desktop the screen element should resize when the application is resized.
 
 
-# Architecture
+## Architecture
 The architecture is copied from the original project, taking into account that I want the different components as loosely coupled as possible.
 
 ResizeMAUI.Models
@@ -31,7 +31,7 @@ I have to mention that only the ResizeMAUI.Application.Maui project contains MAU
 Similarly, I didn't want to include Observability to my datamodel classes, as this is only useful in a MVVM scenario. In my own complete project I have an additional Services project that uses the Models to persist the data to the database. Any Observability on the models would be completely redundant here. The ObservableModels project is used to fill the gap for only those models that need it.
 
 
-# Solution
+## Solution
 There are three parts in the code that are important:
 
 File: ResizeMAUI.Application.Maui/MainPage Function: SizeAllocated
@@ -45,7 +45,7 @@ File: ResizeMAUI.ObservableModels/ObservablePageLayout
 This class uses the PageLayout multiplier to convert to original dimension of the UI elements to their new dimensions
 Setting the ObservablePageLayout to a new value triggers a screen refresh
 
-# How it works
+## How it works
 
 1. When the MainPage is built up, it calls SizeAllocated
 2. SizeAllocated call MainViewModel.CreatePageLayouts
