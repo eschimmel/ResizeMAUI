@@ -32,11 +32,14 @@ Similarly, I didn't want to include Observability to my datamodel classes, as th
 
 
 ## Solution
-There are three parts in the code that are important:
+There are four parts in the code that are important:
 
 File: ResizeMAUI.Application.Maui/MainPage Function: SizeAllocated
 This function is called when the page is created and when it is resized. Most importantly the width and height are the dimensions of the drawable area, without bars.
 Unfortunately, there is a small peculiarity for IOS that has to be taken into account.
+
+File: ResizeMAUI.Application.Maui/Controls/Button BindableProperty PageLayout
+This bindable property is called when the source is changed. When it is called it calculates a new width and height for this button.
 
 File: ResizeMAUI.Models/Factories/PageLayoutFactory Function: CreatePageLayouts
 This function calculates the multiplier that is needed the resize the UI elements to their correct size
@@ -53,5 +56,5 @@ Setting the ObservablePageLayout to a new value triggers a screen refresh
 4. The properties of the ObservablePageLayout are multiplied with the Multiplier and therefore showing the UI element in its desired size.
 5. In case the screen can be resized, SizeAllocated gets called and the Multiplier is recalculated
 
-In my own project, I gave the user the possibility to select another Page layout, with its own calculated Multiplier. Selecting another Page layout also triggers an UI refresh
+In my own project, I gave the user the possibility to select another Page layout, with its own calculated Multiplier. Selecting another Page layout also triggers a refresh of the UI elements it is bound to.
 
