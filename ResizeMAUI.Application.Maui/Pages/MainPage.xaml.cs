@@ -26,7 +26,7 @@ namespace ResizeMAUI.Application.Maui.Pages
         protected override void OnSizeAllocated(double width, double height)
         {
             // width and height are the dimensions of the drawable area.
-            // This excludes all the stattus bars, navigation bars etc.
+            // This excludes all the status bars, navigation bars etc.
 
             AppShell appShell = Microsoft.Maui.Controls.Application.Current.MainPage as AppShell;
             if (appShell.CurrentPage == this)

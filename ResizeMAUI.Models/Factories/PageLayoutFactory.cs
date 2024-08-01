@@ -34,7 +34,7 @@ namespace ResizeMAUI.Models.Factories
         // On the far right there is a column of control buttons, e.g. Show All
         public PageLayout CreateMinimalPageLayout()
         {
-            // Setting the SafeArea is important, because it sets the Padding
+            // Setting the SafeArea is important, because it used to calculate the Padding
             PageLayout layout = new()
             {
                 PageLayoutType = PageLayoutType.Minimal,
@@ -42,6 +42,8 @@ namespace ResizeMAUI.Models.Factories
             };
 
             // Calculate the required minimal dimensions
+            // Width = Padding Left | Button 1 | InnerSpacing | Button 2 | InnerSpacing | ... | Button 10 | OuterSpacing | Right Column Width | Padding Right
+            // Height = Padding Top | Row Height | InnerSpacing | Button Height for Suggestions | InnerSpacing | Key Row 1 | InnerSpacing | ... | Key Row 4 | Padding Bottom
             layout.Width = layout.Padding.Left + (10 * layout.ButtonWidth) + (9 * layout.InnerSpacing) + layout.OuterSpacing + layout.RightColumnWidth + layout.Padding.Right;
             layout.Height = layout.Padding.Top + (5 * layout.ButtonHeight) + layout.RowHeight + (5 * layout.InnerSpacing) + layout.Padding.Bottom;
 
