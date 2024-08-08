@@ -18,9 +18,9 @@
         public double RightColumnWidth { get; set; } = 100;
         public double BottomRowHeight { get; set; }
 
-        public int FontSize { get; set; } = 16;
-        public int LabelFontSize { get; set; } = 14;
-        public int TextDisplayFontSize { get; set; } = 20;
+        public double FontSize { get; set; } = 16;
+        public double LabelFontSize { get; set; } = 14;
+        public double TextDisplayFontSize { get; set; } = 20;
         public double TextDisplayEntryHeight { get; set; } = 42;
 
         public double Width { get; set; }
@@ -31,24 +31,6 @@
         public byte PageLayoutType { get; set; } = Constants.PageLayoutType.Minimal;
         public bool IsPreferred { get; set; } = false;
 
-        public string ButtonMargin
-        {
-            get
-            {
-                int value = (int)Math.Floor(InnerSpacing * Multiplier);
-                return $"{value},0,0,{value}";
-            }
-        }
-
-        public string LabelMargin
-        {
-            get
-            {
-                int value = (int)Math.Floor(InnerSpacing * Multiplier) * 3;
-                return $"{value},0,0,0";
-            }
-        }
-
         public Thickness SafeArea
         {
             set
@@ -57,19 +39,6 @@
                 Padding.Top = Math.Max(OuterSpacing, value.Top);
                 Padding.Right = Math.Max(OuterSpacing, value.Right);
                 Padding.Bottom = Math.Max(OuterSpacing, value.Bottom);
-            }
-        }
-
-        public string PagePadding
-        {
-            get
-            {
-                int left = (int)Math.Floor(Padding.Left * Multiplier);
-                int top = (int)Math.Floor(Padding.Top * Multiplier);
-                int right = (int)Math.Floor(Padding.Right * Multiplier);
-                int bottom = (int)Math.Floor(Padding.Bottom * Multiplier);
-
-                return $"{left},{top},{right},{bottom}";
             }
         }
     }

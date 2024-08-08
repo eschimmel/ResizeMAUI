@@ -149,11 +149,11 @@ namespace ResizeMAUI.ObservableModels
             }
         }
 
-        public new int FontSize
+        public new double FontSize
         {
             get
             {
-                return (int)Math.Floor(base.FontSize * base.Multiplier);
+                return (double)Math.Floor(base.FontSize * base.Multiplier);
             }
             set
             {
@@ -162,11 +162,11 @@ namespace ResizeMAUI.ObservableModels
             }
         }
 
-        public new int LabelFontSize
+        public new double LabelFontSize
         {
             get
             {
-                return (int)Math.Floor(base.LabelFontSize * base.Multiplier);
+                return (double)Math.Floor(base.LabelFontSize * base.Multiplier);
             }
             set
             {
@@ -175,11 +175,11 @@ namespace ResizeMAUI.ObservableModels
             }
         }
 
-        public new int TextDisplayFontSize
+        public new double TextDisplayFontSize
         {
             get
             {
-                return (int)Math.Floor(base.TextDisplayFontSize * base.Multiplier);
+                return (double)Math.Floor(base.TextDisplayFontSize * base.Multiplier);
             }
             set
             {
@@ -276,6 +276,37 @@ namespace ResizeMAUI.ObservableModels
             {
                 base.IsPreferred = value;
                 NotifyPropertChanged();
+            }
+        }
+
+        public string ButtonMargin
+        {
+            get
+            {
+                int value = (int)Math.Floor(InnerSpacing);
+                return $"{value},0,0,{value}";
+            }
+        }
+
+        public string LabelMargin
+        {
+            get
+            {
+                int value = (int)Math.Floor(InnerSpacing) * 3;
+                return $"{value},0,0,0";
+            }
+        }
+
+        public string PagePadding
+        {
+            get
+            {
+                int left = (int)Math.Floor(Padding.Left * Multiplier);
+                int top = (int)Math.Floor(Padding.Top * Multiplier);
+                int right = (int)Math.Floor(Padding.Right * Multiplier);
+                int bottom = (int)Math.Floor(Padding.Bottom * Multiplier);
+
+                return $"{left},{top},{right},{bottom}";
             }
         }
 

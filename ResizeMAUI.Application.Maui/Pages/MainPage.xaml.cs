@@ -46,33 +46,10 @@ namespace ResizeMAUI.Application.Maui.Pages
 
         private void InitializeViewModel()
         {
-            byte idiom = GetIdiom();
+            byte idiom = DeviceInfo.Current.Idiom.ToByte();
 
             MainViewModel viewModel = BindingContext as MainViewModel;
             viewModel.Initialize(VersionTracking.Default.IsFirstLaunchEver, idiom);
-        }
-
-        private static byte GetIdiom()
-        {
-            byte idiom = Models.Constants.Idiom.Unknown;
-
-            DeviceIdiom deviceIdiom = DeviceInfo.Current.Idiom;
-            if (deviceIdiom == DeviceIdiom.Phone)
-            {
-                idiom = Models.Constants.Idiom.Phone;
-            }
-
-            if (deviceIdiom == DeviceIdiom.Tablet)
-            {
-                idiom = Models.Constants.Idiom.Tablet;
-            }
-
-            if (deviceIdiom == DeviceIdiom.Desktop)
-            {
-                idiom |= Models.Constants.Idiom.Desktop;
-            }
-
-            return idiom;
         }
     }
 }

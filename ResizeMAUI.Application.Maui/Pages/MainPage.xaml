@@ -22,11 +22,11 @@
             <Entry VerticalOptions="Start" HorizontalOptions="Fill" MinimumHeightRequest="{Binding PageLayout.TextDisplayEntryHeight}" FontSize="{Binding PageLayout.TextDisplayFontSize}" />
         </VerticalStackLayout>
         <VerticalStackLayout Grid.Row="0" Grid.Column="1">
-            <controls:Button Text="Show All" PageLayout="{Binding PageLayout}"/>
+            <controls:Button Text="show all" PageLayout="{Binding PageLayout}"/>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="1" Grid.Column="1">
-            <controls:Button Text="Clear" PageLayout="{Binding PageLayout}"/>
+            <controls:Button Text="clear" PageLayout="{Binding PageLayout}"/>
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2" Grid.Column="0">
@@ -34,10 +34,10 @@
         </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Row="2" Grid.Column="1" Spacing="{Binding PageLayout.InnerSpacing}">
-            <controls:Button Text="Letters" PageLayout="{Binding PageLayout}"/>
-            <controls:Button Text="Numbers" PageLayout="{Binding PageLayout}"/>
-            <controls:Button Text="Words" PageLayout="{Binding PageLayout}"/>
-            <controls:Button Text="Settings" PageLayout="{Binding PageLayout}"/>
+            <controls:Button Text="letters" PageLayout="{Binding PageLayout}"/>
+            <controls:Button Text="numbers" PageLayout="{Binding PageLayout}"/>
+            <controls:Button Text="words" PageLayout="{Binding PageLayout}"/>
+            <controls:Button Text="settings" PageLayout="{Binding PageLayout}"/>
         </VerticalStackLayout>
     </Grid>
 </ContentPage>
