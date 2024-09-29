@@ -2,7 +2,7 @@
 
 This solution shows how precise sizing of UI elements can be done without having to take into account the sizes of all the different bars that are available on the different platforms.
 
-I have included the most important part of the source code that I used for my mobile application Smart Letter Boord, which can be found on
+I have included the most important part of the source code that I used for my mobile application Smart Letter Board, which can be found on
 https://smartletterboard.com
 
 ## Problem
@@ -45,11 +45,11 @@ This bindable property is called when the source is changed. When it is called i
 
 File: ResizeMAUI.Models/Factories/PageLayoutFactory.cs
 Function: CreatePageLayouts
-This function calculates the multiplier that is needed the resize the UI elements to their correct size
+This function calculates the multiplier that is needed to resize the UI elements to their correct size
 
 File: ResizeMAUI.ObservableModels/ObservablePageLayout.cs
 Class: ObservablePageLayout
-This class uses the PageLayout multiplier to convert to original dimension of the UI elements to their new dimensions
+This class uses the PageLayout multiplier to convert the original dimension of the UI elements to their new dimensions
 Setting the ObservablePageLayout to a new value triggers a screen refresh
 
 ## How it works
@@ -62,3 +62,5 @@ Setting the ObservablePageLayout to a new value triggers a screen refresh
 
 In 'Smart Letter Board' the user has the possibility to select another Page layout, with its own calculated Multiplier. Selecting another Page layout also triggers a refresh of the UI elements it is bound to.
 
+Ed Schimmel
+Byte217
