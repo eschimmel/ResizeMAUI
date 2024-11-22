@@ -28,8 +28,8 @@ namespace ResizeMAUI.Application.Maui.Pages
             // width and height are the dimensions of the drawable area.
             // This excludes all the status bars, navigation bars etc.
 
-            AppShell appShell = Microsoft.Maui.Controls.Application.Current.MainPage as AppShell;
-            if (appShell.CurrentPage == this)
+            Microsoft.Maui.Controls.Page currentPage = Microsoft.Maui.Controls.Application.Current.CurrentPage();
+            if (currentPage == this)
             { 
                 if (BindingContext is MainViewModel viewModel)
                 {
